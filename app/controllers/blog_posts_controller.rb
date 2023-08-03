@@ -1,5 +1,5 @@
 class BlogPostsController < ApplicationController
-
+before_action :set_blog_post, only: [:show, :edit, :update, :destroy]
 	def new
 		@blog_post = BlogPost.new
 	end
@@ -49,5 +49,10 @@ class BlogPostsController < ApplicationController
 	def blog_post_params
 		params.require(:blog_post).permit(:title, :body)
 	end
+
+	def set_blog_post
+		@blog_post = BlogPost.find(params[:id])
+	end
+
 
 end
