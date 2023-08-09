@@ -21,7 +21,6 @@ before_action :set_blog_post, only: [:show, :edit, :update, :destroy]
 	end
 
 	def show
-		@blog_post = BlogPost.published.find(params[:id])
 	end
 
 	def edit
