@@ -17,7 +17,7 @@ before_action :set_blog_post, only: [:show, :edit, :update, :destroy]
 	end
 
 	def index
-		@blog_posts = BlogPost.published
+		@blog_posts = user_signed_in? ? BlogPost.sorted : BlogPost.published.sorted
 	end
 
 	def show
