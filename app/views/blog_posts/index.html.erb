@@ -4,7 +4,7 @@
 <div>
 <% if blog_post.draft? %>
 <div class="p-2 rounded bg-light">Draft </div>
-<% elsif blog_post.schedule? %>
+<% elsif blog_post.scheduled? %>
 <div class="p-2 rounded bg-primary text-light"> Scheduled for <%= blog_post.published_at %> </div>
 <% end %>
 <h2> <%= link_to blog_post.title, blog_post %> </h2>
