@@ -18,10 +18,11 @@
 	<%= form.label :cover_image %>
 	<% if blog_post.cover_image.present? %>
 	<br/>
-	<%= image_tag blog_post.cover_image, class: "max-width: 33%" if blog_post.cover_image.present? %>
+	<%= image_tag blog_post.cover_image, class: "border border-secondary-subtle rounded d-block", style: "max-width: 20%" if blog_post.cover_image.present? %>
 	<br/>
-	<%= link_to "Remove cover image", blog_post_cover_image_path(blog_post), data: { turbo_method: :delete, turbo_confirm: "Are you sure? Any other changes you have made will be lost" }  %>
+	<%= link_to "Remove cover image", blog_post_cover_image_path(blog_post), data: { turbo_method: :delete, turbo_confirm: "Are you sure? Any other changes you have made will be lost." }  %>
 	<br/>
+	</div>
 	<% end %>
 	<%= form.file_field :cover_image %>
 </div>
